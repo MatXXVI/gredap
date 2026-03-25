@@ -1,0 +1,188 @@
+/* Regole per Tablet e Smartphone (schermi sotto i 768px) */
+@media (max-width: 480px) {
+  .login-container {
+    /* Su telefoni piccoli, permettiamo lo scroll se il contenuto è lungo */
+    align-items: center; 
+    padding: 15px;
+  }
+
+  .login-form {
+    padding: 30px 20px; /* Padding interno leggermente ridotto */
+    border-radius: 16px;
+    /* Assicuriamoci che non si allunghi all'infinito */
+    margin: auto 0; 
+  }
+
+  h2 {
+    font-size: 22px;
+    margin-top: 10px;
+  }
+
+  /* Spaziamo meglio gli elementi per il touch */
+  .input-group {
+    margin-bottom: 20px;
+  }
+
+  .login-button {
+    margin-top: 15px;
+    padding: 14px;
+  }
+}
+
+/* 1. Reset fondamentale: elimina i margini di default del browser */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* Evita lo scroll orizzontale fastidioso */
+}
+
+/* Importazione del font Inter da Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Applichiamo il font a tutto il progetto */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /* Applichiamo Inter come prima scelta, con fallback ai font di sistema */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 2. Il contenitore principale deve coprire tutto */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #0019868c 0%, #000136 100%);
+  padding: 20px; /* Aggiunge un "cuscinetto" esterno per non far toccare i bordi dello schermo */
+  box-sizing: border-box;
+}
+
+/* 3. La card rimane centrata e della giusta dimensione */
+.login-form {
+  background: #ffffff;
+  padding: 50px 60px;
+  border-radius: 24px;
+  width: 100%;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  text-align: center; /* Questo allinea h2, p e il link "Hai dimenticato la password?" */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Animazione per far apparire la card dolcemente */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h2 {
+  color: #1a202c;
+  margin-bottom: 12px;
+  font-size: 28px;
+}
+
+p {
+  color: #718096;
+  margin-bottom: 35px; /* Più spazio prima dei campi email/password */
+}
+
+/* Spaziatura tra i campi di input */
+.input-group {
+  margin-bottom: 25px;
+  text-align: left;
+  /* Creiamo un po' di rientro se necessario, ma il padding della card dovrebbe bastare */
+  width: 100%;
+}
+
+.input-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: s#000000;
+  margin-bottom: 8px;
+  padding-left: 4px; /* Allinea leggermente il testo all'inizio dell'input */
+}
+
+.input-group input {
+  width: 100%; /* Occupa il 100% dello spazio RIMASTO dopo il padding della card */
+  padding: 14px 16px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 15px;
+  box-sizing: border-box; /* Evita che l'input esca dai bordi */
+  background-color: #f8fafc; /* Un leggero grigio per far staccare il campo dal bianco */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+  outline: none;
+}
+
+/* Effetto Focus Dinamico */
+.input-group input:focus {
+  border-color: #2563eb; /* Colore brand aziendale */
+  background-color: #ffffff;
+  
+  /* Ombra morbida (Glow) per dare profondità */
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
+  
+  /* Leggerissimo sollevamento visivo */
+  transform: translateY(-1px);
+}
+
+/* Stile per il testo segnaposto (Placeholder) */
+.input-group input::placeholder {
+  color: #94a3b8;
+  transition: opacity 0.3s ease;
+}
+
+/* Nasconde il placeholder quando si clicca per un effetto più pulito */
+.input-group input:focus::placeholder {
+  opacity: 0.5;
+}
+
+/* Pulsante Animato */
+.login-button {
+  width: 100%;
+  padding: 16px; /* Più alto, più facile da cliccare */
+  background: #0f3996; /* Un blu-viola più moderno */
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+.forgot-password {
+  display: inline-block; /* Permette di gestire meglio i margini */
+  margin-top: 25px; /* Distanziamolo bene dal bottone */
+  font-size: 14px;
+  color: #4f46e5;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.forgot-password:hover {
+  color: #3730a3;
+  text-decoration: underline;
+}
+
+.login-button:hover {
+  background: #ffffff;
+  transform: translateY(-2px); /* Si alza leggermente */
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+  color: #2563eb;
+}
+
+.login-button:active {
+  transform: translateY(0); /* Torna giù quando clicchi */
+}

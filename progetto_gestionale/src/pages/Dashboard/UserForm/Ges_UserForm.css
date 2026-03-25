@@ -1,0 +1,162 @@
+.form-page-wrapper {
+  animation: fadeIn 0.4s ease;
+  width: 100%;
+}
+
+.form-container-full {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+}
+
+.user-form-professional {
+  padding: 40px;
+}
+
+.form-section {
+  margin-bottom: 40px;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f1f5f9;
+}
+
+.section-icon {
+  font-size: 20px;
+  background: #eff6ff;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.section-title h4 {
+  color: #1e293b;
+  font-size: 18px;
+  margin: 0;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Si adatta alla larghezza! */
+  gap: 25px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+  padding: 12px 15px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: all 0.2s;
+  background-color: #fcfcfc;
+}
+
+.form-group input:focus {
+  border-color: #2563eb;
+  background-color: #fff;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+  outline: none;
+}
+
+/* Fa sì che l'area note occupi entrambe le colonne della griglia */
+.full-width {
+  grid-column: 1 / -1; /* Estende il div su tutte le colonne della griglia */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.full-width label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b; /* Grigio professionale come gli altri */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.full-width textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  background-color: #fcfcfc;
+  resize: vertical; /* Permette di allungarla ma non allargarla */
+  min-height: 120px;
+  transition: all 0.2s;
+}
+
+.full-width textarea:focus {
+  border-color: #2563eb;
+  background-color: #fff;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+  outline: none;
+}
+
+/* Stile specifico per la textarea per renderla uniforme agli altri input */
+.form-group textarea {
+  width: 100%;
+  resize: vertical; /* Permette all'utente di allungarla ma non di allargarla rompendo il layout */
+  min-height: 100px;
+  font-family: inherit; /* Evita che il font cambi in quello predefinito del browser */
+}
+
+.form-footer {
+  grid-column: 1 / -1; /* Anche i bottoni devono stare sotto tutto */
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.btn-save {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-save:hover {
+  background-color: #1d4ed8;
+}
+
+.btn-cancel {
+  background-color: #f1f5f9;
+  color: #64748b;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
